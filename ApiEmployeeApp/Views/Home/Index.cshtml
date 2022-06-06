@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ApiEmployeeApp.Models.Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row p-3">
+        @foreach (var employee in Model)
+        {
+            <div class="col-8 col-md-6 col-lg-3 mb-4" >
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@employee.EmployeeName</h5>
+                    </div>
+                </div>
+                <div>
+                    <a asp-action="EmployeeDetail" class="btn btn-success form-control mt-2" asp-route-employeeId="@employee.Id">
+                        <strong>Employee details</strong>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+@*<div class="form-horizontal">
+    <hr />
+    <div class="form-group">
+        <table class="table table-responsive" style="width:400px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeSalary)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.EmployeeAge)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.ProfileImage)
+                </th>
+                
+            </tr>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeSalary)
+                    </td>
+                     <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeAge)
+                    </td>
+                      <td>
+                        @Html.DisplayFor(modelItem => item.ProfileImage)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+*@
